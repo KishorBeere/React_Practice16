@@ -1,24 +1,19 @@
-import logo from './logo.svg';
-import './App.css';
+import "./store";
+
+import NavBarMUI from "./NavBarMUI";
+
+import "./App.css";
 
 function App() {
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <div className="main">
+        <NavBarMUI />
+        <h5 className="bottom-right">How are you today?</h5> 
+        <h5 className="bottom-left">Rate Us</h5>
+      </div>
+    </>
   );
 }
 
