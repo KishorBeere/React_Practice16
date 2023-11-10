@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { AppBar, Tab, Tabs, Toolbar,Button,useMediaQuery,useTheme, Typography } from '@mui/material';
-
 import Home from './Home';
 import Account from './account';
 import AccountForm from './accountForm';
@@ -9,6 +8,7 @@ import AccountBalanceIcon from '@mui/icons-material/AccountBalance';
 import DrawerComp from './DrawerComp';
 import ContactUs from './contactus';
 
+const PAGES = ["Home","Check","Update","About Us","Contact Us"] 
 
 
 function NavBarMUI() {
@@ -16,12 +16,10 @@ function NavBarMUI() {
   const [selectedTab, setSelectedTab] = useState(0);
 
   const theme = useTheme();
-  console.log(theme)
 
   const isMatch = useMediaQuery(theme.breakpoints.down('md')) 
-  console.log(isMatch) 
 
-  
+
   return (
     <div>
       <AppBar position="static" sx={{background:'#063970'}} >
@@ -37,12 +35,13 @@ function NavBarMUI() {
                 <>
                 <Tabs value={selectedTab} onChange={(e,newValue)=>{
                             setSelectedTab(newValue)
-                        }} textColor='inherit' sx={{marginLeft:'auto'}}>  
-                        <Tab label="Home" />
-                        <Tab label="Check" />
-                        <Tab label="Update" />
-                        <Tab label="About Us" />
-                        <Tab label="Contact Us" />
+                        }} textColor='inherit' sx={{marginLeft:'auto'}}>   
+                        {
+                          PAGES.map((page, index)=>{
+                          return  <Tab key={index} label={page} />
+                          })
+                        }
+                       
                 </Tabs>
                         <Button sx={{marginLeft:'auto'}} variant='contained'>Login{" "}</Button> 
                         <Button sx={{marginLeft:'10px'}} variant='contained'>Register{" "}</Button> 
@@ -52,7 +51,9 @@ function NavBarMUI() {
 
         </Toolbar>
 
-      </AppBar>
+      </AppBar> 
+
+      
 
       {selectedTab === 0 && <Home />}
       {selectedTab === 1 && <Account />}
@@ -60,7 +61,7 @@ function NavBarMUI() {
       {selectedTab === 3 && <About />}
       {selectedTab === 4 && <ContactUs />}
 
-
+      
     </div>
   );
 }
