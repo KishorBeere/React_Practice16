@@ -13,6 +13,7 @@ import RemoveCircleIcon from '@mui/icons-material/RemoveCircle';
 function ContactUs(){
     return(
         <>
+        <div className="container">
         <div className="contactUs-page"> 
             <div className="row"> 
                 <div className="column">
@@ -59,6 +60,8 @@ function ContactUs(){
                     I want to unblock my account
                 </div>
             </div>
+        </div>
+
         </div>
         </>
     )

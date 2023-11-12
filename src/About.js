@@ -18,8 +18,8 @@ function About(){
             background: 'white',
             padding: 10,
 
-        }}>This application is primarly designed for checking and updating of user account details</h2> 
-
+        }}>This application is primarly designed for checking and updating of user account details</h2>
+        <div className="container">
         <div className="About-page">
             <div className="row">
                 <div className="column"> <StorageIcon/> Values</div>
@@ -41,6 +41,7 @@ function About(){
                 <div className="column"> <SecurityIcon/> Security</div>
             </div>
 
+        </div>
         </div>
         </>
     )
