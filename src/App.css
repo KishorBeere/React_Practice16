@@ -93,15 +93,6 @@ button{
 
 
 @media screen and(min-width:375px) and (max-width:667px) { 
-  .form-control{
-    size: inherit; 
-    font-size: 0.5rem;
-  }
-  button{
-  padding: 0.5em 1em; 
-    font-size: 0.8em; 
-    justify-content: space-around;
-    flex: 1; 
-  }
+  
   
 }
